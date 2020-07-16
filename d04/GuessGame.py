@@ -1,16 +1,73 @@
-
 import random
-ans=(random.randint(1,99))
+ans = random.randint(1, 99)
 min, max = 0, 100
-while True:
+amount = 5  # 可猜 5 次
+while amount > 0 :
+    amount -= 1
     guess = int(input('請在%d~%d之間猜一數字:' % (min, max)))
-    if(guess > ans and guess<100):
+    # 驗證範圍 ?
+    if guess <= min or guess >= max:
+        print('輸入範圍錯誤, 請重新輸入')
+        continue
+    # 是否猜對 ?
+    if guess > ans:
         max = guess
-    elif (guess <ans and guess<100):
+    elif guess < ans:
         min = guess
-    elif ans==guess:
-        print('恭喜答對')
-    else :
-        print('肏你媽')
+    else:
+        print('恭喜答對了')
+        break
+
+    # 若都沒有猜對
+    if amount == 0:
+        print("GG了, 答案:", str(ans))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
